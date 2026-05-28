@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Tip Calculator</h1>
+    <p class="subtitle">Smart bill splitting</p>
+
+    <div class="card">
+
+      <div class="field-group">
+        <label for="bill">Bill Amount (Rs)</label>
+        <div class="input-wrapper">
+          <span class="prefix">Rs</span>
+          <input
+            type="number"
+            id="bill"
+            placeholder="0.00"
+            min="0"
+            step="any"
+            autocomplete="off"
+          />
+        </div>
+        <span class="error-msg" id="bill-error"></span>
+      </div>
+
+      <div class="field-group">
+        <label>Tip Percentage</label>
+        <div class="tip-presets">
+          <button class="preset-btn" data-tip="10" type="button">10%</button>
+          <button class="preset-btn" data-tip="15" type="button">15%</button>
+          <button class="preset-btn" data-tip="20" type="button">20%</button>
+          <button class="preset-btn" data-tip="25" type="button">25%</button>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="number"
+            id="tip"
+            placeholder="Custom %"
+            min="0"
+            max="100"
+            step="any"
+            autocomplete="off"
+          />
+          <span class="suffix">%</span>
+        </div>
+        <span class="error-msg" id="tip-error"></span>
+      </div>
+
+      <div class="field-group">
+        <label for="people">Number of People</label>
+        <div class="input-wrapper">
+          <input
+            type="number"
+             inputmode="numeric"
+            id="people"
+            placeholder="1"
+            autocomplete="off"
+          />
+          <span class="suffix">people</span>
+        </div>
+        <span class="error-msg" id="people-error"></span>
+      </div>
+
+      <button id="reset-btn" type="button">Reset</button>
+    </div>
+
+    <div class="results-card">
+      <h2>Results</h2>
+
+      <div class="result-row">
+        <span class="result-label">Tip Amount</span>
+        <span class="result-value" id="total-tip">Rs 0.00</span>
+      </div>
+
+      <div class="result-row">
+        <span class="result-label">Grand Total</span>
+        <span class="result-value" id="grand-total">Rs 0.00</span>
+      </div>
+
+      <div class="result-row highlight">
+        <span class="result-label">Per Person</span>
+        <span class="result-value big" id="per-person">Rs 0.00</span>
+      </div>
+
+  </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
